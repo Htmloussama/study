@@ -55,6 +55,10 @@ export default function App() {
     }, 80);
   };
 
+  const handleDownload = () => {
+    window.location.href = '/api/download';
+  };
+
   return (
     <div className="h-screen flex flex-col bg-[#f5f7fa] font-sans selection:bg-blue-100 italic-none">
       {/* Professional Header */}
@@ -205,12 +209,21 @@ export default function App() {
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Traitement Terminé</h3>
                       <p className="text-gray-400 text-sm mb-8">La détection a été effectuée avec une précision de 98.2%</p>
-                      <button 
-                        onClick={() => setStatus('idle')}
-                        className="text-blue-400 hover:text-blue-300 font-bold uppercase text-xs tracking-widest border-b border-blue-400/30 pb-1"
-                      >
-                        Recommencer une analyse
-                      </button>
+                      
+                      <div className="flex justify-center gap-6 items-center">
+                        <button 
+                          onClick={handleDownload}
+                          className="bg-[#f9a825] text-[#1a237e] px-6 py-2 rounded-lg font-bold uppercase text-xs tracking-widest hover:bg-white transition-colors shadow-lg"
+                        >
+                          Télécharger
+                        </button>
+                        <button 
+                          onClick={() => setStatus('idle')}
+                          className="text-blue-400 hover:text-blue-300 font-bold uppercase text-xs tracking-widest border-b border-blue-400/30 pb-1"
+                        >
+                          Nouveau Scan
+                        </button>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -275,6 +288,7 @@ export default function App() {
                <div className="p-5 bg-gray-50 border-t border-[#dcdde1] flex flex-col gap-4">
                   <button 
                     disabled={status !== 'done'}
+                    onClick={handleDownload}
                     className={`w-full py-3 rounded-lg font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 ${
                       status === 'done' ? 'bg-[#1a237e] text-white hover:bg-[#0d1b5e] cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     }`}
