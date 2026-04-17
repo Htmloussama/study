@@ -1,0 +1,6 @@
+{
+  "name": "BAC Writing Extractor",
+  "description": "Processor for Tunisan BAC English exam Writing sections. Extracts question prompts and compiles them into a clean PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

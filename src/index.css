@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a237e;
+  --color-accent: #f9a825;
+  --color-bg-gray: #f5f7fa;
+  --color-text-main: #2c3e50;
+  --color-success: #4caf50;
+  --color-border: #dcdde1;
+}
+
+:root {
+  --primary: #1a237e;
+  --accent: #f9a825;
+  --bg: #f5f7fa;
+  --text: #2c3e50;
+  --success: #4caf50;
+  --border: #dcdde1;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.animate-pulse-custom {
+  animation: pulse 1.5s infinite;
+}
