@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Upload, FileText, CheckCircle, AlertCircle, Loader2, Download, Printer } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 // Design Constants
 const COLORS = {
@@ -315,6 +316,7 @@ export default function App() {
         </div>
         <div className="font-bold text-white/20 uppercase tracking-tighter">1024x768 Viewport Lock</div>
       </footer>
+      <Analytics />
     </div>
   );
 }
